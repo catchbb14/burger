@@ -9,9 +9,9 @@ router.get("/", function(req, res) {
         var hbsObject = {
             burgers: data
         }
+        console.log(hbsObject);
+        res.render("index", hbsObject);
     });
-
-    res.render("index", hbsObject)
 });
 
 router.post("/api/burgers", function(req, res) {
