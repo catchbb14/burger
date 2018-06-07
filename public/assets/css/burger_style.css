@@ -1,0 +1,13 @@
+h2 {
+    color: red;
+    margin-bottom: 2em;
+}
+
+
+body {
+    background: gold;
+}
+
+.not_devoured li {
+    background-color: lightgray;
+}
