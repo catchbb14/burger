@@ -8,22 +8,18 @@ var orm = {
             cb(result);
         });
     },
-    insertOne: function(vals, cb) {
-        var query = `INSERT INTO burgers (burger_name, devoured)
-            VALUES ('${vals[0]}, ${vals[1]})`
+    insertOne: function(burger_name, cb) {
+        var query = `INSERT INTO burgers (burger_name)
+            VALUES (?)`
 
-        console.log(query);
-
-        connection.query(query, function(err, result) {
+        connection.query(query, [burger_name], function(err, result) {
             if(err) throw err;
             cb(result);
         })
     }, updateOne: function(id, cb) {
         var query = `UPDATE burgers 
-            SET {devoured: true}
+            SET devoured = true
             WHERE id = ${id};`
-
-        console.log(query);
 
         connection.query(query, function(err, result) {
             if(err) throw err;
