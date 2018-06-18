@@ -11,8 +11,8 @@ var burger = {
             cb(res);
         });
     },
-    updateOne: function(vals, id, cb) {
-        orm.updateOne(vals, id, function(res) {
+    updateOne: function(id, cb) {
+        orm.updateOne(id, function(res) {
             cb(res);
         });
     }
